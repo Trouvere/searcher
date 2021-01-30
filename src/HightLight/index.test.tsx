@@ -8,9 +8,6 @@ describe("HightLight", () => {
     const textareaText = "qwerty";
     render(<HightLight inputText={inputText} str={textareaText} />);
     const linkElement = screen.getByText(/erty/i);
-    // screen.debug();
-    // const linkElement = screen.getByText("erty");
-    // const linkElement = screen.getByText(/werty/i);
     expect(linkElement).toBeInTheDocument();
   });
 
@@ -19,9 +16,6 @@ describe("HightLight", () => {
     const textareaText = "qwerty";
     render(<HightLight inputText={inputText} str={textareaText} />);
     const linkElement = screen.getByText(/qwerty/i);
-    // screen.debug();
-    // const linkElement = screen.getByText("erty");
-    // const linkElement = screen.getByText(/werty/i);
     expect(linkElement).toBeInTheDocument();
   });
 });

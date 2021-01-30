@@ -18,21 +18,20 @@ const App = () => {
       target: { value: textareaText },
     } = e;
     setTextareaText(textareaText);
-    console.log(textareaText);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const {
       target: { value: inputText },
     } = e;
-    console.log(inputText);
+
     setInputText(inputText);
   };
 
   return (
     <>
-      {/* <Title title="App для поиска и выделения символов в textarea" />
-      <div className="editable">
+      <Title title="App для поиска и выделения символов в textarea" />
+      {/* <div className="editable">
         <div className={"ttyt"}>
           <HightLight inputText={inputText} str={textareaText} />
         </div>
@@ -58,17 +57,7 @@ const App = () => {
         onChange={handleTextareaChange}
       />
       <InputText value={inputText} onChange={handleChange} />
-      <HightLight inputText={inputText} str={textareaText} />
-      {/* TEST */}
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-      {/* TEST */}
+      {/* <HightLight inputText={inputText} str={textareaText} /> */}
     </>
   );
 };

@@ -7,7 +7,7 @@ describe("BacklitTextArea", () => {
     const inputText = "123";
     const textareaText = "12345";
     const handleTextareaChange = jest.fn();
-    const { container } = render(
+    render(
       <BacklitTextArea
         inputText={inputText}
         textareaText={textareaText}
