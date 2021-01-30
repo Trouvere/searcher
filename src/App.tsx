@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import ContentEditable from "react-contenteditable";
-// import logo from "./logo.svg";
+
 import HightLight from "./HightLight";
 import Title from "./Title";
+import InputText from "./InputText";
+import BacklitTextArea from "./BacklitTextArea";
+
 import "./App.css";
-
-// type TitleProps = {
-//   title: string;
-// };
-
-// const Title = ({ title }: TitleProps) => <h1>{title}</h1>;
 
 const App = () => {
   const [textareaText, setTextareaText] = useState("");
@@ -35,8 +31,7 @@ const App = () => {
 
   return (
     <>
-      <Title title="App для поиска и выделения символов в textarea" />
-
+      {/* <Title title="App для поиска и выделения символов в textarea" />
       <div className="editable">
         <div className={"ttyt"}>
           <HightLight inputText={inputText} str={textareaText} />
@@ -48,17 +43,32 @@ const App = () => {
           placeholder="Введите сюда текст"
         />
       </div>
-
       <div className={"search"}>
         <input
           className={"searchInput"}
           value={inputText}
-          onChange={handleChange}
+          onChange={() => handleChange}
           placeholder="Введите символы для поиска в тексте"
         />
-      </div>
+      </div> */}
 
+      <BacklitTextArea
+        inputText={inputText}
+        textareaText={textareaText}
+        onChange={handleTextareaChange}
+      />
+      <InputText value={inputText} onChange={handleChange} />
       <HightLight inputText={inputText} str={textareaText} />
+      {/* TEST */}
+      <a
+        className="App-link"
+        href="https://reactjs.org"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Learn React
+      </a>
+      {/* TEST */}
     </>
   );
 };

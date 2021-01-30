@@ -9,28 +9,33 @@ type HightLightProps = {
 const HightLight: FunctionComponent<HightLightProps> = ({
   inputText,
   str,
-}: HightLightProps): any => {
+}: HightLightProps): JSX.Element => {
   // const { inputText, str } = props;
-  if (!inputText) return str;
-  const regexp = new RegExp(inputText, "ig");
-  const matchValue = str.match(regexp);
-  // console.log(matchValue);
+  if (!inputText) return <>{str}</>;
+  const regexp: RegExp = new RegExp(inputText, "ig");
+  console.log(regexp);
+  const matchValue: RegExpMatchArray | null = str.match(regexp);
+  console.log(matchValue);
   if (matchValue) {
-    // console.log("matchValue", matchValue);
-    // console.log("str.split(regexp)", str.split(regexp));
-    return str.split(regexp).map((s, index, array) => {
-      if (index < array.length - 1) {
-        const c = matchValue.shift();
-        return (
-          <>
-            {s}
-            <span className={"hightlight"}>{c}</span>
-          </>
-        );
+    let strSplit: string[] = str.split(regexp);
+    let strSplitMap: JSX.Element[] = strSplit.map(
+      (s: string, index: number, array: string[]) => {
+        if (index < array.length - 1) {
+          const c: string | undefined = matchValue.shift();
+          console.log(c);
+          return (
+            <>
+              {s}
+              <span className={"hightlight"}>{c}</span>
+            </>
+          );
+        }
+        return <>{s}</>;
       }
-      return s;
-    });
+    );
+    let wrap: JSX.Element = <>{strSplitMap}</>;
+    return wrap;
   }
-  return str;
+  return <>{str}</>;
 };
 export default HightLight;
