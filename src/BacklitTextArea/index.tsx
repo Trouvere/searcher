@@ -2,7 +2,6 @@ import React, { FunctionComponent } from "react";
 import HightLight from "../HightLight";
 
 type BacklitTextAreaProps = {
-  // value: string;
   inputText: string;
   textareaText: string;
   onChange(event: React.FormEvent<HTMLTextAreaElement>): void;

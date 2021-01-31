@@ -22,40 +22,18 @@ const App = () => {
     const {
       target: { value: inputText },
     } = e;
-
     setInputText(inputText);
   };
 
   return (
     <>
       <Title title="App для поиска и выделения символов в textarea" />
-      {/* <div className="editable">
-        <div className={"wraperHightLight"}>
-          <HightLight inputText={inputText} str={textareaText} />
-        </div>
-        <textarea
-          className="BacklitTextArea"
-          value={textareaText}
-          onChange={handleTextareaChange}
-          placeholder="Введите сюда текст"
-        />
-      </div>
-      <div className={"search"}>
-        <input
-          className={"searchInput"}
-          value={inputText}
-          onChange={() => handleChange}
-          placeholder="Введите символы для поиска в тексте"
-        />
-      </div> */}
-
       <BacklitTextArea
         inputText={inputText}
         textareaText={textareaText}
         onChange={handleTextareaChange}
       />
       <InputText value={inputText} onChange={handleChange} />
-      {/* <HightLight inputText={inputText} str={textareaText} /> */}
     </>
   );
 };
