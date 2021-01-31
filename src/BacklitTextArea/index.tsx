@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 import HightLight from "../HightLight";
-// import style from "./styles.module.css";
 
 type BacklitTextAreaProps = {
   // value: string;
@@ -16,11 +15,11 @@ const BacklitTextArea: FunctionComponent<BacklitTextAreaProps> = ({
 }) => (
   //
   <div className="editable">
-    <div className="ttyt">
+    <div className="wraperHightLight">
       <HightLight inputText={inputText} str={textareaText} />
     </div>
     <textarea
-      className="ttt"
+      className="BacklitTextArea"
       value={textareaText}
       onChange={onChange}
       placeholder="Введите сюда текст"

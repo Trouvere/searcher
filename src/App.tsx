@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-
-import HightLight from "./HightLight";
 import Title from "./Title";
 import InputText from "./InputText";
 import BacklitTextArea from "./BacklitTextArea";
@@ -32,11 +30,11 @@ const App = () => {
     <>
       <Title title="App для поиска и выделения символов в textarea" />
       {/* <div className="editable">
-        <div className={"ttyt"}>
+        <div className={"wraperHightLight"}>
           <HightLight inputText={inputText} str={textareaText} />
         </div>
         <textarea
-          className="ttt"
+          className="BacklitTextArea"
           value={textareaText}
           onChange={handleTextareaChange}
           placeholder="Введите сюда текст"
