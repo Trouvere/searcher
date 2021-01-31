@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 type HightLightProps = {
   inputText: string;
@@ -9,9 +10,8 @@ const HightLight: FunctionComponent<HightLightProps> = ({
   str,
 }: HightLightProps): JSX.Element => {
   const generateKey = (): string => {
-    let k = new Date().getTime() * Math.floor(Math.random() * 1000);
-
-    return `${k}`;
+    let k = uuidv4();
+    return `HightLight_${k}`;
   };
   if (!inputText) return <>{str}</>;
   const regexp: RegExp = new RegExp(inputText, "ig");
