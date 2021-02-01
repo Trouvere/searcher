@@ -65,6 +65,7 @@
   font-size: 27px;
   font-weight: 700;
   font-family: sans-serif;
+  white-space: pre-wrap;
 }
 .BacklitTextArea {
   box-sizing: border-box;
